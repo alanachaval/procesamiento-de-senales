@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import numpy as np
 from scipy.fftpack import fft
 
@@ -30,3 +31,11 @@ class Funciones:
         espacio_entre_muestras = linspace[1] - linspace[0]
         frecuencia_maxima = 1.0 / (2.0 * espacio_entre_muestras)
         return np.fft.fftshift(senal), np.linspace(-frecuencia_maxima, frecuencia_maxima, len(linspace))
+
+    @staticmethod
+    def plot(id, senal, linspace, title, xlabel, ylabel):
+        fig = plt.figure(id)
+        fig.canvas.set_window_title(title)
+        plt.xlabel(xlabel)
+        plt.ylabel(ylabel)
+        plt.plot(linspace, senal)

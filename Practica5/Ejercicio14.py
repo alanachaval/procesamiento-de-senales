@@ -13,28 +13,11 @@ for i in range(250 * 9, 250 * 10):
 senal_no_periodica_fft = Funciones.transformada_de_fourier(senal_no_periodica)
 senal_no_periodica_fft_plot, frecuencia = Funciones.linspace_transformada(senal_no_periodica_fft, tiempo)
 
-f1 = plt.figure(1)
-f1.canvas.set_window_title('Diente de sierra periodica')
-plt.xlabel('Tiempo (en segundos)')
-plt.ylabel('Amplitud')
-plt.plot(tiempo, senal)
-
-f2 = plt.figure(2)
-f2.canvas.set_window_title('Transformada diente de sierra periodica')
-plt.xlabel('Frecuencia (en hertz)')
-plt.ylabel('Amplitud')
-plt.plot(frecuencia, senal_fft)
-
-f3 = plt.figure(3)
-f3.canvas.set_window_title('Diente de sierra')
-plt.xlabel('Tiempo (en segundos)')
-plt.ylabel('Amplitud')
-plt.plot(tiempo, senal_no_periodica)
-
-f4 = plt.figure(4)
-f4.canvas.set_window_title('Transformada diente de sierra')
-plt.xlabel('Frecuencia (en hertz)')
-plt.ylabel('Amplitud')
-plt.plot(frecuencia, senal_no_periodica_fft_plot)
+Funciones.plot(1, senal, tiempo, 'Diente de sierra periodica', 'Tiempo (en segundos)', 'Amplitud')
+Funciones.plot(2, senal_fft_plot, frecuencia, 'Transformada diente de sierra periodica', 'Frecuencia (en hertz)',
+               'Amplitud')
+Funciones.plot(3, senal_no_periodica, tiempo, 'Diente de sierra', 'Tiempo (en segundos)', 'Amplitud')
+Funciones.plot(4, senal_no_periodica_fft_plot, frecuencia, 'Transformada diente de sierra', 'Frecuencia (en hertz)',
+               'Amplitud')
 
 plt.show()
