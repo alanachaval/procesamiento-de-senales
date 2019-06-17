@@ -30,9 +30,3 @@ class Funciones:
         espacio_entre_muestras = linspace[1] - linspace[0]
         frecuencia_maxima = 1.0 / (2.0 * espacio_entre_muestras)
         return np.fft.fftshift(senal), np.linspace(-frecuencia_maxima, frecuencia_maxima, len(linspace))
-        # linspace_centrado = np.zeros(len(linspace))
-        # offset = (linspace[len(linspace) - 1] - linspace[0]) / 2
-        # for i in range(len(linspace)):
-        #     linspace_centrado[i] = linspace[i] - offset
-        # return linspace_centrado
-# np.linspace(0.0, 1.0/(2.0*T), N//2)
