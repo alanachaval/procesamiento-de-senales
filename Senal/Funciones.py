@@ -41,5 +41,31 @@ class Funciones:
         plt.plot(linspace, senal)
 
     @staticmethod
+    def scatter(id, senal, linspace, title, xlabel, ylabel):
+        fig = plt.figure(id)
+        fig.canvas.set_window_title(title)
+        plt.xlabel(xlabel)
+        plt.ylabel(ylabel)
+        plt.scatter(linspace, senal)
+
+    @staticmethod
     def modular_en_amplitud(senal, tiempo, frecuencia_portadora):
         return senal * np.cos(tiempo * frecuencia_portadora * 2 * np.pi)
+
+    @staticmethod
+    def ventana_rectangular(size):
+        ventana = np.ones(size)
+        return ventana
+
+    @staticmethod
+    def ventana_triangular(size):
+        ventana = np.array(range(size))
+        centro = 1.0 * size / 2.0
+        ventana = 1.0 - abs(ventana + 0.5 - centro) / centro
+        return ventana
+
+    @staticmethod
+    def ventana_hamming(size):
+        n = np.array(range(size))
+        ventana = 0.54 - 0.46 * np.cos(2 * np.pi * (n + 0.5) / size)
+        return ventana
