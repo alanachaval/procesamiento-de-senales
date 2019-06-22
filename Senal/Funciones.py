@@ -39,3 +39,7 @@ class Funciones:
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)
         plt.plot(linspace, senal)
+
+    @staticmethod
+    def modular_en_amplitud(senal, tiempo, frecuencia_portadora):
+        return senal * np.cos(tiempo * frecuencia_portadora * 2 * np.pi)

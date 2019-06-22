@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.fftpack import ifft
 
-from Practica5.Funciones import Funciones
+from Senal.Funciones import Funciones
 
 tiempo = np.linspace(0, 1, 5000)
 senal = Funciones.generar_senoidal(tiempo, 3, 20, 0)

@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from Practica5.Funciones import Funciones
+from Senal.Funciones import Funciones
 
 tiempo = np.linspace(0, 1, 5000)
 senal = Funciones.generar_diente_de_sierra(tiempo, 3, 20, np.pi)
