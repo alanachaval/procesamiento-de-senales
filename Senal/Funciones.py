@@ -53,6 +53,18 @@ class Funciones:
         return senal * np.cos(tiempo * frecuencia_portadora * 2 * np.pi)
 
     @staticmethod
+    def demodular_en_amplitud(senal, tiempo, frecuencia_portadora):
+        senal = Funciones.modular_en_amplitud(senal, tiempo, frecuencia_portadora)
+        senal = Funciones.transformada_de_fourier(senal)
+        senal, frecuencia = Funciones.linspace_transformada(senal, tiempo)
+        for i in range(len(frecuencia)):
+            if abs(frecuencia[i]) * 2 > frecuencia_portadora:
+                senal[i] = 0
+        senal = np.fft.fftshift(senal)
+        senal = Funciones.antitrasformada_de_fourier(senal) * 2
+        return senal
+
+    @staticmethod
     def ventana_rectangular(size):
         ventana = np.ones(size)
         return ventana
