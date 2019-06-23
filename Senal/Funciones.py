@@ -41,12 +41,12 @@ class Funciones:
         plt.plot(linspace, senal)
 
     @staticmethod
-    def scatter(id, senal, linspace, title, xlabel, ylabel):
+    def stem(id, senal, linspace, title, xlabel, ylabel):
         fig = plt.figure(id)
         fig.canvas.set_window_title(title)
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)
-        plt.scatter(linspace, senal)
+        plt.stem(linspace, senal)
 
     @staticmethod
     def modular_en_amplitud(senal, tiempo, frecuencia_portadora):

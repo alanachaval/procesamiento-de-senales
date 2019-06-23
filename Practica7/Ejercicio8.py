@@ -10,8 +10,8 @@ rectangular = Funciones.ventana_rectangular(size)
 triangular = Funciones.ventana_triangular(size)
 hamming = Funciones.ventana_hamming(size)
 
-Funciones.scatter(1, rectangular, ventana, 'Rectangular', 'Numero de muestra', 'Amplitud')
-Funciones.scatter(1, triangular, ventana, 'Triangular', 'Numero de muestra', 'Amplitud')
-Funciones.scatter(1, hamming, ventana, 'Hamming', 'Numero de muestra', 'Amplitud')
+Funciones.stem(1, rectangular, ventana, 'Rectangular', 'Numero de muestra', 'Amplitud')
+Funciones.stem(2, triangular, ventana, 'Triangular', 'Numero de muestra', 'Amplitud')
+Funciones.stem(3, hamming, ventana, 'Hamming', 'Numero de muestra', 'Amplitud')
 
 plt.show()
